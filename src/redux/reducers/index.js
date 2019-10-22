@@ -7,7 +7,7 @@ import addPlantReducer from './addPlantReducer';
 import editReducer from './editReducer';
 import fetchPlantReducer from './fetchPlantReducer';
 import imageReducer from './imageReducer';
-
+import currentPlantReducer from './currentPlantReducer';
 
 
 // rootReducer is the primary reducer for our entire project
@@ -25,6 +25,7 @@ const rootReducer = combineReducers({
   editReducer,
   fetchPlantReducer,
   imageReducer,
+  currentPlantReducer,
 
 });
 

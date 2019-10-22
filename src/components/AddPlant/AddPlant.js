@@ -37,8 +37,6 @@ class AddPlant extends Component {
             return alert ('fill out common name and date fields')
         };
 
-
-
         // let images = []
         // images.push(this.state.newPlant.image);
         

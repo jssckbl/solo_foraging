@@ -49,15 +49,15 @@ const styles = muiBaseTheme => ({
 class UserPage extends Component {
 
   componentDidMount() {
-    this.props.dispatch({ type: 'FETCH_PLANTS' });
+    this.props.dispatch({ type: 'GET_PLANTS' });
   }
 
   handleClick = (item) => {
     console.log(item);
-    this.props.dispatch({ type: 'FETCH_PLANT_DETAILS', payload: item });
+    this.props.dispatch({ type: 'CURRENT_PLANT_DETAILS', payload: item });
 
-    this.props.history.push(`/specificplant/${item.plants_id}`)
-    console.log(this.props.storeInstance.plantReducer);
+    this.props.history.push(`/currentplant`)
+    // console.log(this.props.storeInstance.plantReducer);
   }
 
   handleAddClick = () => {

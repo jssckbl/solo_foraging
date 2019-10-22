@@ -15,8 +15,8 @@ import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import AddPlant from '../AddPlant/AddPlant';
 import EditPlant from '../EditPage/EditPage';
+import CurrentPlant from '../CurrentPlant/CurrentPlant';
 
-// import SpecificPlant from '../SpecificPlant/SpecificPlant';
 
 import './App.css';
 
@@ -64,6 +64,16 @@ class App extends Component {
                 <AddPlant
                 match={navProps.match}
                 history={navProps.history}/>
+              )}
+            />
+
+            <ProtectedRoute
+              exact
+              path="/currentplant"
+              render={(navProps) => (
+                <CurrentPlant
+                  match={navProps.match}
+                  history={navProps.history} />
               )}
             />
             {/* <ProtectedRoute

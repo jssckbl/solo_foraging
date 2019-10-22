@@ -15,7 +15,7 @@ function* getPlantSaga() {
 function* addPlantSaga(action) {
     try {
         yield axios.post(`/plants`, action.payload);
-        yield put({ type: 'GET_PLANT', payload: action.payload })
+        yield put({ type: 'GET_PLANTS', payload: action.payload })
     } catch (error) {
         console.log('Error', error);
         alert('Could not get plant information in addPlantSaga.')
@@ -34,7 +34,7 @@ function* editPlantSaga(action) {
 }
 
 function* plantSaga() {
-    yield takeLatest('SET_PLANTS', getPlantSaga);
+    yield takeLatest('GET_PLANTS', getPlantSaga);
     yield takeLatest('ADD_PLANT', addPlantSaga);
     yield takeLatest('EDIT_PLANT', editPlantSaga);
 
