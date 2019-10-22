@@ -1,12 +1,10 @@
-import React, {Component} from 'react';
-import {
-  HashRouter as Router,
-  Route,
-  Redirect,
-  Switch,
-} from 'react-router-dom';
+import React, { Component } from 'react';
+import { HashRouter as Router } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
@@ -15,13 +13,16 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
+import AddPlant from '../AddPlant/AddPlant';
+import EditPlant from '../EditPage/EditPage';
+
+// import SpecificPlant from '../SpecificPlant/SpecificPlant';
 
 import './App.css';
 
 class App extends Component {
-  componentDidMount () {
-    this.props.dispatch({type: 'FETCH_USER'})
+  componentDidMount() {
+    this.props.dispatch({ type: 'FETCH_USER' })
   }
 
   render() {
@@ -46,14 +47,34 @@ class App extends Component {
             <ProtectedRoute
               exact
               path="/home"
-              component={UserPage}
+              render={(navProps) => (
+                <UserPage
+                // match will allow the ability to read a wildcard number at the end of a url
+                match={navProps.match}
+                // history allows us to navigate backwards and forwards using react router (it's a property of react router)
+                history={navProps.history}/>
+              )}
             />
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
             <ProtectedRoute
               exact
-              path="/info"
-              component={InfoPage}
+              path="/addplant"
+              render={(navProps) => (
+                <AddPlant
+                match={navProps.match}
+                history={navProps.history}/>
+              )}
+            />
+            {/* <ProtectedRoute
+              exact
+              path="/specificplant/:id"
+              component={SpecificPlant}
+            /> */}
+            <ProtectedRoute
+              exact
+              path="/edit"
+              component={EditPlant}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
@@ -61,7 +82,8 @@ class App extends Component {
           <Footer />
         </div>
       </Router>
-  )}
+    )
+  }
 }
 
 export default connect()(App);

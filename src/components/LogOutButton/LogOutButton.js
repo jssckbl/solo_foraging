@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+// route to login page
+
 const LogOutButton = props => (
   <button
     // This button shows up in multiple locations and is styled differently

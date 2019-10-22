@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
+// route to login page only
+
 class RegisterPage extends Component {
   state = {
     username: '',

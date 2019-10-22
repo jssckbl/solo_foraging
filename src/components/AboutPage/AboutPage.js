@@ -9,7 +9,10 @@ const AboutPage = () => (
   <div>
     <div>
       <p>
-        This about page is for anyone to read!
+        Plants are cool. Edible plants that are not toxic are super cool. Find some cool edible plants!
+      </p>
+      <p>
+        Here are some links to things that help you out when it comes to cool edible plants:
       </p>
     </div>
   </div>
