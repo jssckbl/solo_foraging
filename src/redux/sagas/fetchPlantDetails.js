@@ -10,7 +10,7 @@ function* fetchPlantDetails(action) {
     console.log('in fetch Plant Details', action.payload)
 
     try {
-        const response = yield axios.get(`/plants/${action.payload.shows_id}`);
+        const response = yield axios.get(`/plants/${action.payload.id}`);
         yield put({ type: 'SET_PLANT_DETAILS', payload: response.data })
     } catch (error) {
         console.log('Error getting plant details', error);
@@ -20,3 +20,5 @@ function* fetchPlantDetails(action) {
 
 
 export default plantDetailsRoot;
+
+

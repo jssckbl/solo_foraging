@@ -1,157 +1,120 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-// This is one of our simplest components
-// It doesn't have local state, so it can be a function component.
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is, so it doesn't need 'connect()'
-
-const CurrentPlant = () => (
-    <div>
-        <div>
-            <h1>This is the current plant page!</h1>
-
-        </div>
-    </div>
-);
-
-export default CurrentPlant;
-
-// import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-
-// class AddPlant extends Component {
-
-//     state = {
-//         newPlant: {
-//             common_name: '',
-//             scientific_name: '',
-//             date: '',
-//             location: '',
-//             stem: '',
-//             leaves: '',
-//             image: ''
-//         }
-//     }
-
-//     handleChange = (propertyName, event) => {
-//         console.log('event happened')
-//         this.setState({
-//             newPlant: {
-//                 ...this.state.newPlant,
-//                 [propertyName]: event.target.value,
-//             }
-//         });
-//     }
-
-//     addNewPlant = event => {
-//         event.preventDefault();
-
-//         // if statement to prevent onClick from happening without required
-//         // information in specific fields 
-//         // common_name and date
-
-//         if (this.state.newPlant.common_name === '' ||
-//             this.state.newPlant.date === '') {
-//             return alert('fill out common name and date fields')
-//         };
-
-//         // let images = []
-//         // images.push(this.state.newPlant.image);
-
-//         // , this.state.newPlant.image2, this.state.newPlant.image3);
-//         // let objectToSend = {
-//         //     ...this.state.newPlant, images
-//         // }
-
-//         this.props.dispatch({ type: 'ADD_PLANT', payload: this.state.newPlant })
-//         this.setState({
-//             newPlant: {
-//                 common_name: '',
-//                 scientific_name: '',
-//                 date: '',
-//                 location: '',
-//                 stem: '',
-//                 leaves: '',
-//                 image: ''
-//             }
-
-//         });
-//         this.props.history.push(`/home`);
-//         // this.props.dispatch({ type: 'FETCH_PLANTS' });
-//     }
-
-//     // formData = () => {
-//     //     this.setState({
-//     //         newPlant: {
-//     //             common_name: 'milkweed',
-//     //             scientific_name: 'milkweedio',
-//     //             date: '10/10/2019',
-//     //             location: '22nd and 32nd',
-//     //             stem: 'round',
-//     //             leaves: 'pointed',
-//     //             image: ''
-//     //         }
-//     //     })
-//     // }
-
-//     render() {
-//         console.log(this.state.newPlant)
-//         return (
-//             <div class="form">
-
-//                 <h3 class="add" onClick={this.formData}>
-//                     Add New Plant
-//                 </h3>
-//                 <form onSubmit={this.addNewPlant}>
-//                     All fields with an * are required to complete the new plant.
-//                      <br />
-//                     <br />
-
-//                     * Common Name: <input id="textbox" type="text" placeholder="ex. Swamp Milkweed"
-//                         value={this.state.newPlant.common_name}
-//                         onChange={(event) => this.handleChange('common_name', event)}></input>
-//                     <br />
-
-//                     Scientific Name: <input id="textbox" type="text" placeholder="ex. Asclepias incarnata"
-//                         value={this.state.newPlant.scientific_name}
-//                         onChange={(event) => this.handleChange('scientific_name', event)}></input>
-//                     <br />
-
-//                     Date Found: <input id="textbox" type="text" placeholder="ex. 10-19-2019"
-//                         value={this.state.newPlant.date}
-//                         onChange={(event) => this.handleChange('date', event)}></input>
-//                     <br />
-
-//                     Location: <input id="textbox" type="text" placeholder="ex. 3201 22nd Ave S"
-//                         value={this.state.newPlant.location}
-//                         onChange={(event) => this.handleChange('location', event)}></input>
-//                     <br />
-
-//                     Stem: <input id="textbox" type="text" placeholder="ex. Branched"
-//                         value={this.state.newPlant.stem}
-//                         onChange={(event) => this.handleChange('stem', event)}></input><br />
-
-//                     Leaves: <input id="textbox" type="text" placeholder="ex. Opposite arrangement, 4 inches long, narrow"
-//                         value={this.state.newPlant.image1}
-//                         onChange={(event) => this.handleChange('leaves', event)}
-//                     ></input><br />
-
-//                     <br />
-//                     <br />
+import { withRouter } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import CardMedia from '@material-ui/core/CardMedia';
+import Card from '@material-ui/core/Card';
+import './CurrentPlant.css';
+import Grid from '@material-ui/core/Grid';
 
 
-//                     <button type="submit">Save</button>
+// const styles = muiBaseTheme => ({
+//     card: {
 
-//                 </form>
+//         width: 350,
+//         margin: muiBaseTheme.spacing.unit,
+//         transition: "0.3s",
 
-//             </div>
-//         )
-//     }
-// };
 
-// const mapStateToProps = storeInstance => ({
-//     storeInstance
-// })
+//         boxShadow: "0 8px 40px -12px rgba(0,0,0,0.3)",
+//         "&:hover": {
+//             boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)"
+//         },
+//         height: '400px'
+//     },
+//     media: {
+//         paddingTop: "56.25%",
+//         width: '100%',
+//         height: '20%'
 
-// // this allows us to use <App /> in index.js
-// export default connect(mapStateToProps)(AddPlant);
+//     },
+//     content: {
+//         textAlign: "center",
+//         padding: muiBaseTheme.spacing.unit * 3
+//     },
+//     divider: {
+//         margin: `${muiBaseTheme.spacing.unit * 3}px 0`
+//     },
+//     heading: {
+//         fontWeight: "bold"
+//     },
+//     subHeading: {
+//         lineHeight: 1.8
+//     },
+
+// });
+
+
+class CurrentPlant extends Component {
+
+    state = {
+        plantToEdit: {
+            user_id: 'this.props.storeInstance.currentPlantReducer.user_id',
+            common_name: '',
+            scientific_name: '',
+            date: '',
+            location: '',
+            stem: '',
+            leaves: '',
+            image: ''
+        }
+    }
+    componentDidMount() {
+        this.props.dispatch({ type: 'GET_CURRENT_PLANT', payload: this.props.match.params.id })
+    };
+
+
+    render() {
+        const item = this.props.storeInstance.currentPlantReducer;
+        return (
+
+            <div>
+                    <div>
+                        <button onClick={() => this.props.history.push(`/edit/${item.id}`)}>
+                            {item.common_name} that is {item.scientific_name} on {item.date} at {item.location} where {item.stem}, {item.leaves}, for reference {item.image}
+                        </button>
+                    </div>
+                <p>{JSON.stringify(this.props.storeInstance.currentPlantReducer)}</p>
+            </div>
+
+        )
+    }
+};
+
+const mapStateToProps = storeInstance => ({
+    storeInstance
+})
+
+export default connect(mapStateToProps)(CurrentPlant);
+
+
+// connect to the store to get the currentPlantReducer
+// use userPage as reference and the line below
+//    use something like the following 
+// let plants = this.props.storeInstance.currentPlantReducer;
+{/* <Card key={item.id} className={classes.card} onClick={() => this.handleClick(item)}>
+    <CardMedia
+        className={classes.media}
+        image={item.url}
+    />
+    <CardContent className={classes.content}>
+        <Typography
+            className={"MuiTypography--heading"}
+            variant={"h6"}
+            gutterBottom
+        >
+            Plant: {item.common_name}
+        </Typography>
+        <Typography
+            className={"MuiTypography--subheading"}
+            variant={"caption"}
+        >
+            Date: {item.date}
+        </Typography>
+        <br />
+    </CardContent>
+
+</Card> */}

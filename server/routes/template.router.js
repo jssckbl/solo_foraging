@@ -27,25 +27,22 @@ router.get('/', (req, res) => {
         })
 });
 
-// router.get('/:id', (req, res) => {
-//     console.log('req.query.id', req.params.id);
-//     console.log('req.body.id', req.body)
-//     const sqlText = `SELECT * from "plantinfo"
-//     JOIN "images" on "plantinfo"."id" = "images"."plantinfo_id"
-//     WHERE "plantinfo"."id" = $1
-//     ORDER BY "plantinfo"."id";`;
-//     value = [req.params.id];
+router.get('/:id', (req, res) => {
+   let plantId = req.params.id;
 
-//     pool.query(sqlText, value)
-//         .then((response) => {
-//             console.log('router GET id plant info', response.rows)
-//             res.send(response.rows);
-//         })
-//         .catch((error) => {
-//             console.log('error GET plant info', error)
-//             res.sendStatus(500)
-//         })
-// });
+   let queryText = `SELECT * FROM plantinfo WHERE "id"= $1;`;
+
+   pool.query(queryText, [plantId])
+   .then((result) =>{
+       res.send(result.rows[0]);
+   }).catch((error) => {
+       Console.log(error);
+       res.sendStatus(500);
+   })
+
+
+    
+});
 
 
 

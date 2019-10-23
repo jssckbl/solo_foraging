@@ -21,6 +21,16 @@ function* addPlantSaga(action) {
         alert('Could not get plant information in addPlantSaga.')
     }
 }
+function* getCurrentPlant(action){
+    try {
+        console.log(action.payload);
+        
+        const response = yield axios.get(`/plants/${action.payload}`);
+        yield put({type: 'CURRENT_PLANT_DETAILS', payload: response.data})
+    }catch (error) {
+        console.log('error getting single plant', error);
+    }
+}
 
 function* editPlantSaga(action) {
     try {
@@ -37,6 +47,7 @@ function* plantSaga() {
     yield takeLatest('GET_PLANTS', getPlantSaga);
     yield takeLatest('ADD_PLANT', addPlantSaga);
     yield takeLatest('EDIT_PLANT', editPlantSaga);
+    yield takeLatest('GET_CURRENT_PLANT', getCurrentPlant);
 
 }
 

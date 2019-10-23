@@ -49,10 +49,10 @@ class App extends Component {
               path="/home"
               render={(navProps) => (
                 <UserPage
-                // match will allow the ability to read a wildcard number at the end of a url
-                match={navProps.match}
-                // history allows us to navigate backwards and forwards using react router (it's a property of react router)
-                history={navProps.history}/>
+                  // match will allow the ability to read a wildcard number at the end of a url
+                  match={navProps.match}
+                  // history allows us to navigate backwards and forwards using react router (it's a property of react router)
+                  history={navProps.history} />
               )}
             />
             {/* This works the same as the other protected route, except that if the user is logged in,
@@ -62,19 +62,20 @@ class App extends Component {
               path="/addplant"
               render={(navProps) => (
                 <AddPlant
-                match={navProps.match}
-                history={navProps.history}/>
+                  match={navProps.match}
+                  history={navProps.history} />
               )}
             />
 
             <ProtectedRoute
               exact
-              path="/currentplant"
-              render={(navProps) => (
-                <CurrentPlant
-                  match={navProps.match}
-                  history={navProps.history} />
-              )}
+              path="/plant/:id"
+              component={CurrentPlant}
+            // render={(navProps) => (
+            //   <CurrentPlant
+            //     match={navProps.match}
+            //     history={navProps.history} />
+            // )}
             />
             {/* <ProtectedRoute
               exact

@@ -10,10 +10,12 @@ import './UserPage.css';
 import Grid from '@material-ui/core/Grid';
 
 
+
+
 const styles = muiBaseTheme => ({
   card: {
 
-    width: 350,
+    width: 300,
     margin: muiBaseTheme.spacing.unit,
     transition: "0.3s",
 
@@ -53,11 +55,7 @@ class UserPage extends Component {
   }
 
   handleClick = (item) => {
-    console.log(item);
-    this.props.dispatch({ type: 'CURRENT_PLANT_DETAILS', payload: item });
-
-    this.props.history.push(`/currentplant`)
-    // console.log(this.props.storeInstance.plantReducer);
+    this.props.history.push(`/plant/${item.id}`)
   }
 
   handleAddClick = () => {
@@ -81,8 +79,8 @@ class UserPage extends Component {
         <p><center>Click on a plant to learn more about it</center></p>
 
         <Grid className="center" container spacing={12}>
-          {/* <Grid item xs={3}>
-          </Grid> */}
+          <Grid item xs={3}>
+          </Grid>
           {plants.map(item =>
             <Card key={item.id} className={classes.card} onClick={() => this.handleClick(item)}>
               <CardMedia
