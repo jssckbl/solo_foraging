@@ -66,6 +66,14 @@ class CurrentPlant extends Component {
         this.props.dispatch({ type: 'GET_CURRENT_PLANT', payload: this.props.match.params.id })
     };
 
+    handleClick = (item) => {
+        this.props.history.push(`/edit/${item.id}`)
+    }
+
+    cancelButton = (event) => {
+        this.props.history.push('/home')
+    }
+
 
     render() {
         const item = this.props.storeInstance.currentPlantReducer;
@@ -74,10 +82,21 @@ class CurrentPlant extends Component {
             <div>
                     <div>
                         <button onClick={() => this.props.history.push(`/edit/${item.id}`)}>
-                            {item.common_name} that is {item.scientific_name} on {item.date} at {item.location} where {item.stem}, {item.leaves}, for reference {item.image}
+                        <ul> 
+                            <li>{item.common_name}</li> 
+                            <li>{item.scientific_name}</li> 
+                            <li>{item.date}</li>
+                            <li>{item.location}</li>
+                            <li>{item.stem}</li>
+                            <li>{item.leaves}</li>
+                            <li>{item.image}</li>
+                        </ul>
                         </button>
                     </div>
                 <p>{JSON.stringify(this.props.storeInstance.currentPlantReducer)}</p>
+
+                <button onClick={this.cancelButton} type="submit">Cancel</button>
+
             </div>
 
         )

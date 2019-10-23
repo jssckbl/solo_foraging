@@ -41,6 +41,10 @@ class AddPlant extends Component {
         });
     }
 
+    cancelButton = (event) => {
+        this.props.history.push('/home')
+    }
+
     addNewPlant = event => {
         event.preventDefault();
 
@@ -52,14 +56,6 @@ class AddPlant extends Component {
         this.state.newPlant.date === '') {
             return alert ('fill out common name and date fields')
         };
-
-        // let images = []
-        // images.push(this.state.newPlant.image);
-        
-        // , this.state.newPlant.image2, this.state.newPlant.image3);
-        // let objectToSend = {
-        //     ...this.state.newPlant, images
-        // }
 
         this.props.dispatch({ type: 'ADD_PLANT', payload: this.state.newPlant })
         this.setState({
@@ -139,6 +135,8 @@ class AddPlant extends Component {
 
 
                     <button type="submit">Save</button>
+                    <button onClick={this.cancelButton} type="submit">Cancel</button>
+
 
                 </form>
 

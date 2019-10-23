@@ -30,11 +30,13 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
    let plantId = req.params.id;
 
-   let queryText = `SELECT * FROM plantinfo WHERE "id"= $1;`;
+   let queryText = `SELECT * FROM "plantinfo" WHERE "id"= $1;`;
 
    pool.query(queryText, [plantId])
    .then((result) =>{
        res.send(result.rows[0]);
+// above line is what changes the GET from the database from an array to an object
+// this affects the CurrentPlant render return 
    }).catch((error) => {
        Console.log(error);
        res.sendStatus(500);
@@ -170,7 +172,7 @@ router.put('/edit', (req, res) => {
 
     const sqlText = `UPDATE "plantinfo" SET "common_name" = $1, "date" = $2, "location" = $3, "stem" = $4, "leaves" = $5, "image" = $6
     WHERE "id" = $7;`;
-    const values = [req.body.common_name, req.body.date, req.body.location, req.body.stem, req.body.leaves,
+    const values = [req.body.common_name, req.body.scientific_name, req.body.date, req.body.location, req.body.stem, req.body.leaves,
     req.body.image]
     pool.query(sqlText, values)
         .then((response) => {
