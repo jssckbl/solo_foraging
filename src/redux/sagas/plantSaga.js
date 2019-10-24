@@ -21,6 +21,7 @@ function* addPlantSaga(action) {
         alert('Could not get plant information in addPlantSaga.')
     }
 }
+
 function* getCurrentPlant(action){
     try {
         console.log(action.payload);
@@ -34,12 +35,23 @@ function* getCurrentPlant(action){
 
 function* editPlantSaga(action) {
     try {
-        console.log('in edit Plant Saga, action.payload is:', action.payload.editPlantSaga);
-        yield axios.put(`/plants/edit`, action.payload.editPlantSaga);
-
+        console.log('in edit Plant Saga, action.payload is:', action.payload);
+        yield axios.put(`/plants/edit`, action.payload);
+        // below (action) is what gets the edit page to edit immediately! yay!
+        this.getCurrentPlant(action);
     } catch (error) {
         console.log('Error', error);
         // alert('Could not update plant info')
+    }
+}
+
+function* deletePlant(action) {
+    try {
+        console.log('in deletePlant SAGA', action.payload);
+        yield axios.delete(`/edit/${action.payload.id}`, action.payload)
+        yield put({ type: 'FETCH_PLANTS'});
+    } catch (error) {
+        console.log('error in deletePlant saga', error);
     }
 }
 
@@ -48,6 +60,7 @@ function* plantSaga() {
     yield takeLatest('ADD_PLANT', addPlantSaga);
     yield takeLatest('EDIT_PLANT', editPlantSaga);
     yield takeLatest('GET_CURRENT_PLANT', getCurrentPlant);
+    yield takeLatest('DELETE_PLANT', deletePlant);
 
 }
 

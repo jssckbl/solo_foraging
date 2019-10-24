@@ -8,6 +8,8 @@ import React from 'react';
 const AboutPage = () => (
   <div>
     <div>
+      <p>Wild Edibles Journal</p>
+      <p>List of Links</p>
       <p>
         Plants are cool. Edible plants that are not toxic are super cool. Find some cool edible plants!
       </p>
