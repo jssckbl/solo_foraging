@@ -47,8 +47,8 @@ function* editPlantSaga(action) {
 
 function* deletePlant(action) {
     try {
-        console.log('in deletePlant SAGA', action.payload);
-        yield axios.delete(`/edit/${action.payload.id}`);
+        yield console.log('in deletePlant SAGA', action.payload);
+        yield axios.delete(`/plants/${action.payload.id}`);
         yield put({ type: 'GET_PLANTS'});
     } catch (error) {
         console.log('error in deletePlant saga', error);

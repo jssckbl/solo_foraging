@@ -62,8 +62,9 @@ setEventToEdit = () => {
         this.props.history.push('/home')
     }
 
-    deleteButton = (item) => {
-        this.props.dispatch({ type: 'DELETE_PLANT', payload: item })
+    deleteButton = () => {
+        this.props.dispatch({ type: 'DELETE_PLANT', payload: this.props.match.params })
+        this.props.history.push('/home')
     }
 
     // updatePlant = () => {

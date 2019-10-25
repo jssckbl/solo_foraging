@@ -8,8 +8,10 @@ import './Footer.css'
 
 const Footer = () => (
   <footer>
-    &copy; Prime Digital Academy
-  </footer>
+    
+<img src="portacorn.png" className="portacorn" alt="portacorn"/>
+
+</footer>
 );
 
 export default Footer;

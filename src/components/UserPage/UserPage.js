@@ -74,7 +74,7 @@ class UserPage extends Component {
 
         <button className="button" type="submit" onClick={() => this.handleAddClick()}>Add New Plant</button>
         <h1 id="welcome">
-          <p><center>The Morel of the Journal</center></p>
+          <p><center>The Morel of the Story</center></p>
         </h1>
         <p><center>Click on a plant to learn more about it</center></p>
 

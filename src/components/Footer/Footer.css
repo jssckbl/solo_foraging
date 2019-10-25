@@ -1,3 +1,10 @@
 footer {
     margin-top: 80px;
 }
+
+.portacorn {
+    height: 60px;
+    align-self: left;
+    padding-bottom: 10px;
+}
+
