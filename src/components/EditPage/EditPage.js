@@ -146,6 +146,7 @@ setEventToEdit = () => {
                     ></input><br />
                     <br />
                     <button type="submit">Save</button>
+                    {/* <button onClick={() => this.deleteButton(item)}>DELETE</button> */}
                     <button onClick={this.deleteButton} >DELETE</button>
                     <button onClick={this.cancelButton} >Cancel</button>
 

@@ -2,7 +2,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 
-function* getPlantSaga() {
+function* getPlantSaga(action) {
     try {
         const response = yield axios.get(`/plants`);
         yield put({ type: 'SET_PLANTS', payload: response.data })
@@ -48,8 +48,8 @@ function* editPlantSaga(action) {
 function* deletePlant(action) {
     try {
         console.log('in deletePlant SAGA', action.payload);
-        yield axios.delete(`/edit/${action.payload.id}`, action.payload)
-        yield put({ type: 'FETCH_PLANTS'});
+        yield axios.delete(`/edit/${action.payload.id}`);
+        yield put({ type: 'GET_PLANTS'});
     } catch (error) {
         console.log('error in deletePlant saga', error);
     }

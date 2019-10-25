@@ -95,14 +95,12 @@ router.post('/', (req, res) => {
 router.delete('/:id', (req, res) => {
     console.log('router DELETE', req.params.id);
     const sqlText = `DELETE FROM "plantinfo" WHERE id=$1;`;
-
-    value = [req.params.id];
-    pool.query(sqlText, value)
+    pool.query(sqlText, [req.params.id])
         .then((response) => {
-            res.sendStatus
+            res.sendStatus(200);
         })
         .catch((error) => {
-            console.log(error);
+            console.log('error deleting from DB', error);
             res.sendStatus(500)
         })
 });
