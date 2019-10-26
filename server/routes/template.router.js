@@ -67,7 +67,7 @@ router.get('/:id', (req, res) => {
  * POST route template
  */
 router.post('/', (req, res) => {
-    // console.log('in ROUTER POST', req.body);
+    console.log('in ROUTER POST', req.body.image.image);
     const newPlant = req.body;
     const queryValues = [
         req.user.id,
@@ -76,15 +76,17 @@ router.post('/', (req, res) => {
         newPlant.date,
         newPlant.location,
         newPlant.stem,
-        newPlant.leaves
+        newPlant.leaves,
+        newPlant.image.image
     ]
 
-    const sqlText = `INSERT INTO "plantinfo" ("user_id", "common_name", "scientific_name", "date", "location", "stem", "leaves") VALUES ($1, $2, $3, $4, $5, $6, $7);`;
+
+    const sqlText = `INSERT INTO "plantinfo" ("user_id", "common_name", "scientific_name", "date", "location", "stem", "leaves", "added_image") VALUES ($1, $2, $3, $4, $5, $6, $7, $8);`;
     pool.query(sqlText, queryValues)
     .then(() => {res.sendStatus(201);
     // console.log('in router POST', response)
 }).catch (( error ) => {
-    console.log( 'error in POST')
+    console.log( 'error in POST', error)
     res.sendStatus(500);
 })
 });

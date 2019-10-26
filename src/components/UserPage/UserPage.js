@@ -85,7 +85,7 @@ class UserPage extends Component {
             <Card key={item.id} className={classes.card} onClick={() => this.handleClick(item)}>
               <CardMedia
                 className={classes.media}
-                image={item.url}
+                image={item.added_image}
               />
               <CardContent className={classes.content}>
                 <Typography

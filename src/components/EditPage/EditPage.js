@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
+
 
 class EditPlant extends Component {
 
@@ -146,11 +148,22 @@ setEventToEdit = () => {
                         onChange={(event) => this.handleChange('image1', event)}
                     ></input><br />
                     <br />
-                    <button type="submit">Save</button>
-                    {/* <button onClick={() => this.deleteButton(item)}>DELETE</button> */}
-                    <button onClick={this.deleteButton} >DELETE</button>
-                    <button onClick={this.cancelButton} >Cancel</button>
 
+                    <Button variant="contained" color="primary" type="submit" >
+                        SAVE
+                    </Button>
+
+                    <Button variant="contained" color="primary" onClick={this.deleteButton}>
+                        DELETE
+                    </Button>
+
+                    <Button variant="contained" color="primary" onClick={this.cancelButton}>
+                        CANCEL
+                    </Button>
+
+                    {/* <button type="submit">Save</button> */}
+                    {/* <button onClick={this.deleteButton} >DELETE</button> */}
+                    {/* <button onClick={this.cancelButton} >Cancel</button> */}
 
                 </form>
             </div>

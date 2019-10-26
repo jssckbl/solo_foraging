@@ -5,6 +5,8 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import purple from '@material-ui/core/colors/purple';
 import green from '@material-ui/core/colors/green';
 
+import SubmitComponent from '../SubmitComponent/SubmitComponent';
+
 
 const theme = createMuiTheme({
     palette: {
@@ -39,6 +41,19 @@ class AddPlant extends Component {
                 [propertyName]: event.target.value,
             }
         });
+    }
+
+
+// add setImg to 
+
+    setImg = (imgUrl) => {
+        this.setState({
+            newPlant: {
+                ...this.state.newPlant,
+                image: imgUrl
+            }
+        })
+        console.log(this.state.newPlant)
     }
 
     cancelButton = (event) => {
@@ -92,7 +107,7 @@ class AddPlant extends Component {
         console.log(this.state.newPlant)
         return (
             <div class="form">
-
+                
                 <h3 class="add" onClick={this.formData}>
                     Add New Plant
                 </h3>
@@ -130,9 +145,9 @@ class AddPlant extends Component {
                         onChange={(event) => this.handleChange('leaves', event)}
                     ></input><br />
 
+                    Image: <SubmitComponent setPic={this.setImg} />
                     <br />
                     <br />
-
 
                     <button type="submit">Save</button>
                     <button onClick={this.cancelButton} type="submit">Cancel</button>

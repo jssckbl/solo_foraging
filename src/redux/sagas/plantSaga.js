@@ -15,7 +15,8 @@ function* getPlantSaga(action) {
 function* addPlantSaga(action) {
     try {
         yield axios.post(`/plants`, action.payload);
-        yield put({ type: 'GET_PLANTS', payload: action.payload })
+        yield getPlantSaga();
+        // yield put({ type: 'GET_PLANTS', payload: action.payload })
     } catch (error) {
         console.log('Error', error);
         alert('Could not get plant information in addPlantSaga.')

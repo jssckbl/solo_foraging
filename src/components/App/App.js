@@ -16,6 +16,7 @@ import UserPage from '../UserPage/UserPage';
 import AddPlant from '../AddPlant/AddPlant';
 import EditPlant from '../EditPage/EditPage';
 import CurrentPlant from '../CurrentPlant/CurrentPlant';
+import SubmitComponent from '../SubmitComponent/SubmitComponent';
 
 
 import './App.css';
@@ -67,6 +68,16 @@ class App extends Component {
               )}
             />
 
+            {/* This works to allow user to upload image  */}
+            <ProtectedRoute
+              exact
+              path="/addplantimage"
+              render={(navProps) => (
+                <SubmitComponent
+                match={navProps.match}
+                history={navProps.history} />
+              )}
+                />
             <ProtectedRoute
               exact
               path="/plant/:id"
