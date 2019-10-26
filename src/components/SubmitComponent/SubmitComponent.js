@@ -12,8 +12,7 @@ class SubmitComponent extends Component {
 
         let reader= new FileReader();
         reader.readAsDataURL(image[0]);
-
-        reader.onload=(e)=>{
+         reader.onload=(e)=>{
             console.log('image data', e.target.result)
 
             const formData = {image:e.target.result}
@@ -23,9 +22,8 @@ class SubmitComponent extends Component {
 
     render() {
         return (
-
             <div >
-                <h1>React js File Upload Tutorial</h1>
+                <h1>UPLOAD PHOTO</h1>
                 <input type="file" name="image" onChange={(e) =>this.onChange(e)} />
             </div>
         )

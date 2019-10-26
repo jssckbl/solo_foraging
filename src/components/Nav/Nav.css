@@ -1,14 +1,36 @@
+/* don't use px, use rem  */
+/* placeholder.com */
+/* if it is a class, use dot
+/* if it is an id, use #
+/* if it is an html element, then you don't need either infront of it
+
+*/
+
+/* skeletoncss 
+cdn
+
+/* border boxing */
+
+* {
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 .nav-title {
     font-size: 24px;
     font-weight: 700;
     display: inline-block;
     color: #807d27;
     padding-left: 10px;
+    /* consider padding-top: 2rem; as an example */
 }
 
 .nav {
   overflow: hidden;
   background-color: #e8c99a;
+  max-width: 100%;
 }
 
 .nav-link {
@@ -34,3 +56,4 @@
 .nav-right {
   float: right;
 }
+

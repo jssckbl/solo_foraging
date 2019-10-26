@@ -26,7 +26,6 @@ function* addPlantSaga(action) {
 function* getCurrentPlant(action){
     try {
         console.log(action.payload);
-        
         const response = yield axios.get(`/plants/${action.payload}`);
         yield put({type: 'CURRENT_PLANT_DETAILS', payload: response.data})
     }catch (error) {
