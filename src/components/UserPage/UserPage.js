@@ -24,10 +24,10 @@ const styles = muiBaseTheme => ({
     "&:hover": {
       boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)"
     },
-    height: '400px'
+    height: '300px'
   },
   media: {
-    paddingTop: "56.25%",
+    paddingTop: "60%",
     width: '100%',
     height: '20%'
 
@@ -65,56 +65,101 @@ class UserPage extends Component {
 
   render() {
 
-    const { classes } = this.props;
+    const {
+      classes
+    } = this.props;
 
     let plants = this.props.storeInstance.plantReducer;
 
-    return (
-      <div>
+    return ( <
+      div >
 
-        <button className="button" type="submit" onClick={() => this.handleAddClick()}>Add New Plant</button>
-        <h1 id="welcome">
-          <p><center>The Morel of the Story</center></p>
-        </h1>
-        <p><center>Click on a plant to learn more about it</center></p>
+      <
+      button className = "button"
+      type = "submit"
+      onClick = {
+        () => this.handleAddClick()
+      } > Add New Plant < /button> <
+      h1 id = "welcome" >
+      <
+      p > < center > The Morel of the Story < /center></p >
+      <
+      /h1> <
+      p > < center > Click on a plant to learn more about it < /center></p >
 
-        <Grid className="center" container spacing={12}>
-          <Grid item xs={3}>
-          </Grid>
-          {plants.map(item =>
-            <Card key={item.id} className={classes.card} onClick={() => this.handleClick(item)}>
-              <CardMedia
-                className={classes.media}
-                image={item.added_image}
-              />
-              <CardContent className={classes.content}>
-                <Typography
-                  className={"MuiTypography--heading"}
-                  variant={"h6"}
-                  gutterBottom
-                >
-                  Plant: {item.common_name}
-                </Typography>
-                <Typography
-                  className={"MuiTypography--subheading"}
-                  variant={"caption"}
-                >
-                  Date: {item.date}
-                </Typography>
-                <br />
-              </CardContent>
+      <
+      Grid className = "center"
+      container spacing = {
+        12
+      } >
+      <
+      Grid item xs = {
+        3
+      } >
+      <
+      /Grid> {
+        plants.map(item =>
+          <
+          Card key = {
+            item.id
+          }
+          className = {
+            classes.card
+          }
+          onClick = {
+            () => this.handleClick(item)
+          } >
+          <
+          CardMedia className = {
+            classes.media
+          }
+          image = {
+            item.added_image
+          }
+          /> <
+          CardContent className = {
+            classes.content
+          } >
+          <
+          Typography className = {
+            "MuiTypography--heading"
+          }
+          variant = {
+            "h6"
+          }
+          gutterBottom >
+          Plant: {
+            item.common_name
+          } <
+          /Typography> <
+          Typography className = {
+            "MuiTypography--subheading"
+          }
+          variant = {
+            "caption"
+          } >
+          Date: {
+            item.date
+          } <
+          /Typography> <
+          br / >
+          <
+          /CardContent>
 
-            </Card>
-          )}
+          <
+          /Card>
+        )
+      }
 
-        </Grid>
-      </div>
+      <
+      /Grid> <
+      /div>
     )
   }
-};
+  };
 
-const mapStateToProps = storeInstance => ({
-  storeInstance
-})
-// this allows us to use <App /> in index.js
-export default withStyles(styles)(connect(mapStateToProps)(UserPage));
+  const mapStateToProps = storeInstance => ({
+    storeInstance
+  })
+  // this allows us to use <App /> in index.js
+  export default withStyles(styles)(connect(mapStateToProps)(UserPage));
