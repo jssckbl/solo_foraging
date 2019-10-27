@@ -8,15 +8,16 @@ import './Nav.css';
 // className is class in mark's stuff
 const Nav = (props) => (
   <div className="nav">
+    <img src="Morels.png" className="morelsLogo" alt="morelsLogo" />
     <Link to="/home">
-      <h2 className="nav-title">Morel of the Story</h2>
+      <h2 className="nav-title"></h2>
     </Link>
-    <div className="nav-right">
+    <div className="nav-right" id="main">
       <Link className="nav-link" to="/home">
         {/* Show this link if they are logged in or not,
         but call this link 'Home' if they are logged in,
         and call this link 'Login / Register' if they are not */}
-        {props.user.id ? 'Home' : 'Login / Register'}
+        {props.user.id ? 'Home' : 'Login  Register'}
       </Link>
       {/* Show the link to the info page and the logout button if the user is logged in */}
       {props.user.id && (

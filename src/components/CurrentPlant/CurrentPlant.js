@@ -59,7 +59,7 @@ class CurrentPlant extends Component {
             location: '',
             stem: '',
             leaves: '',
-            image: ''
+            image: 'this.props.storeInstance.currentPlantReducer.image'
         }
     }
     componentDidMount() {
@@ -76,24 +76,27 @@ class CurrentPlant extends Component {
 
 
     render() {
-        const item = this.props.storeInstance.currentPlantReducer;
+        let pizza = this.props.storeInstance.currentPlantReducer;
+        let plants = this.props.storeInstance.plantReducer;
+
         return (
 
-            <div>
-                    <div>
-                        <button onClick={() => this.props.history.push(`/edit/${item.id}`)}>
+            <div className="current-plant">
+                    {/* <div className="card"> */}
+
+                        <button className="current_plant_info" onClick={() => this.props.history.push(`/edit/${pizza.id}`)}>
                         <ul> 
-                            <li>{item.common_name}</li> 
-                            <li>{item.scientific_name}</li> 
-                            <li>{item.date}</li>
-                            <li>{item.location}</li>
-                            <li>{item.stem}</li>
-                            <li>{item.leaves}</li>
-                            <li>{item.image}</li>
+                            <li>{pizza.common_name}</li> 
+                            <li>{pizza.scientific_name}</li> 
+                            <li>{pizza.date}</li>
+                            <li>{pizza.location}</li>
+                            <li>{pizza.stem}</li>
+                            <li>{pizza.leaves}</li>
+                            <li>{pizza.image}</li>
                         </ul>
                         </button>
-                    </div>
-                <p>{JSON.stringify(this.props.storeInstance.currentPlantReducer)}</p>
+                    {/* </div> */}
+                {/* <p>{JSON.stringify(this.props.storeInstance.currentPlantReducer)}</p> */}
 
                 <button onClick={this.cancelButton} type="submit">Cancel</button>
 

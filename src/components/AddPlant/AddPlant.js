@@ -1,20 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { createMuiTheme } from '@material-ui/core/styles';
-import purple from '@material-ui/core/colors/purple';
-import green from '@material-ui/core/colors/green';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import {withStyles} from '@material-ui/core/styles';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
 
 import SubmitComponent from '../SubmitComponent/SubmitComponent';
 
 
-const theme = createMuiTheme({
-    palette: {
-        primary: purple,
-        secondary: green,
+const styles = theme => ({
+    container: {
+        display: 'flex',
+        flexWrap: 'wrap',
     },
-    status: {
-        danger: 'orange',
+    textField: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+    },
+    dense: {
+        marginTop: 16,
+    },
+    menu: {
+        width: 200,
     },
 });
 
@@ -105,6 +114,9 @@ class AddPlant extends Component {
 
     render() {
         console.log(this.state.newPlant)
+
+            const { classes } = this.props;
+
         return (
             <div class="form">
                 
@@ -114,19 +126,37 @@ class AddPlant extends Component {
                 <form onSubmit={this.addNewPlant}>
                     All fields with an * are required to complete the new plant.
                      <br />
-                    <br />
-
+                    < br />
                     * Common Name: <input id="textbox" type="text" placeholder="ex. Swamp Milkweed"
+                    
                         value={this.state.newPlant.common_name}
                         onChange={(event) => this.handleChange('common_name', event)}></input>
-                    <br />
+< br />
+{/* <TextField>
+    Scientific Name: < input id = "textbox"
+    label="With placeholder"
+    type = "text"
 
-                    Scientific Name: <input id="textbox" type="text" placeholder="ex. Asclepias incarnata"
+
+    placeholder = "ex. Asclepias incarnata"
+
+    value = {
+        this.state.newPlant.scientific_name
+    }
+    onChange = {
+        (event) => this.handleChange('scientific_name', event)
+    } > </input>
+</TextField> */}
+
+                    Scientific Name: <input id="textbox" type="text" placeholder="ex. science name"
                         value={this.state.newPlant.scientific_name}
                         onChange={(event) => this.handleChange('scientific_name', event)}></input>
                     <br />
-
-                    Date Found: <input id="textbox" type="text" placeholder="ex. 10-19-2019"
+                    
+< br /> 
+                        * Date Found: < input id = "textbox"
+                        type = "text"
+                        placeholder = "ex. 10-19-2019"
                         value={this.state.newPlant.date}
                         onChange={(event) => this.handleChange('date', event)}></input>
                     <br />
@@ -163,6 +193,10 @@ class AddPlant extends Component {
 const mapStateToProps = storeInstance => ({
     storeInstance
 })
+
+AddPlant.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
 
 // this allows us to use <App /> in index.js
 export default connect(mapStateToProps)(AddPlant);

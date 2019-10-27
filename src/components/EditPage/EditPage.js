@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
+import './EditPage.css';
 
 
 class EditPlant extends Component {
@@ -109,16 +110,13 @@ setEventToEdit = () => {
     render() {
         // console.log(this.state.editPlant.images)
         return (
-            <div class="form">
+            <div class="form" id="grad">
 
                 <h2>
                     Edit Plant
                 </h2>
                 <form onSubmit={this.updatePlant} >
-                    EDIT PLANT!
-                     <br />
-                    <br />
-
+  
                     Common Name: <input id="textbox" type="text" placeholder="Common Name"
                         defaultValue={this.state.editPlant.common_name}
                         onChange={(event) => this.handleChange('common_name', event)}></input>
@@ -149,7 +147,7 @@ setEventToEdit = () => {
                     ></input><br />
                     <br />
 
-                    <Button variant="contained" color="primary" type="submit" >
+                    {/* <Button variant="contained" color="primary" type="submit" >
                         SAVE
                     </Button>
 
@@ -159,11 +157,11 @@ setEventToEdit = () => {
 
                     <Button variant="contained" color="primary" onClick={this.cancelButton}>
                         CANCEL
-                    </Button>
+                    </Button> */}
 
-                    {/* <button type="submit">Save</button> */}
-                    {/* <button onClick={this.deleteButton} >DELETE</button> */}
-                    {/* <button onClick={this.cancelButton} >Cancel</button> */}
+                    <button type="submit">Save</button> 
+                     <button onClick={this.deleteButton} >DELETE</button> 
+                    <button onClick={this.cancelButton} >Cancel</button>
 
                 </form>
             </div>
