@@ -9,8 +9,8 @@ body {
 }
 
 form {
-    width: 30%;
-    height: 250px;
+    width: 90%;
+    height: 100%;
     margin: 1px;
     padding: 3px;
     border-radius: 2px;
@@ -19,6 +19,7 @@ form {
 input {
     margin: 5px;
     margin-bottom: 10px;
+    color: #585858;
 }
 
 .log-in, .log-out, .register {

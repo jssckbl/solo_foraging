@@ -1,17 +1,17 @@
-import React from 'react';
-import './Footer.css'
+// import React from 'react';
+// import './Footer.css'
 
-// This is one of our simplest components
-// It doesn't have local state, so it can be a function component.
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is, so it doesn't need 'connect()'
+// // This is one of our simplest components
+// // It doesn't have local state, so it can be a function component.
+// // It doesn't dispatch any redux actions or display any part of redux state
+// // or even care what the redux state is, so it doesn't need 'connect()'
 
-const Footer = () => (
-  <footer>
+// const Footer = () => (
+//   <footer>
     
-<img src="portacorn.png" className="portacorn" alt="portacorn"/>
+// <img src="portacorn.png" className="portacorn" alt="portacorn"/>
 
-</footer>
-);
+// </footer>
+// );
 
-export default Footer;
+// export default Footer;

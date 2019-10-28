@@ -80,10 +80,8 @@ class CurrentPlant extends Component {
         let plants = this.props.storeInstance.plantReducer;
 
         return (
-
             <div className="current-plant">
                     {/* <div className="card"> */}
-
                         <button className="current_plant_info" onClick={() => this.props.history.push(`/edit/${pizza.id}`)}>
                         <ul> 
                             <li>{pizza.common_name}</li> 
@@ -98,8 +96,12 @@ class CurrentPlant extends Component {
                         </button>
                     {/* </div> */}
                 {/* <p>{JSON.stringify(this.props.storeInstance.currentPlantReducer)}</p> */}
+<br></br>
+                    <button className="currentCancel" onClick={this.cancelButton} type="submit">Cancel</button>
 
-                <button onClick={this.cancelButton} type="submit">Cancel</button>
+
+
+
 
             </div>
 

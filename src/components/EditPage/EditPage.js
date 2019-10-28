@@ -163,9 +163,10 @@ setEventToEdit = () => {
                         CANCEL
                     </Button> */}
 
-                    <button type="submit">Save</button> 
+                    <button type="submit">SAVE</button> 
+                    <button onClick={this.cancelButton} >CANCEL</button>
+
                      <button onClick={this.deleteButton} >DELETE</button> 
-                    <button onClick={this.cancelButton} >Cancel</button>
 
                 </form>
             </div>

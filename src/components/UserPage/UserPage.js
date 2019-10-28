@@ -48,6 +48,8 @@ const styles = muiBaseTheme => ({
 
 });
 
+
+
 class UserPage extends Component {
 
   componentDidMount() {
@@ -70,7 +72,7 @@ class UserPage extends Component {
 
     return ( 
     <div id="grad">
-      <p id="greeting">Click on a plant to learn more about it</p >
+      <p id="greeting">Look at all of the plants you found!</p >
 
       <Grid className = "center"
       container spacing = {12} >
@@ -91,6 +93,7 @@ class UserPage extends Component {
           <Typography 
           className = {"MuiTypography--heading"}
           variant = {"h6"}
+          typeface = {"Comic Sans"}
           gutterBottom >
           Plant: {item.common_name} 
           </Typography> 
