@@ -1,10 +1,19 @@
 footer {
     margin-top: 80px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #dddddd;
+  text-align: right;
 }
 
+
+
 .portacorn {
-    height: 60px;
-    align-self: left;
+    height: 40px;
+    align-self: right;
     padding-bottom: 10px;
+    position: bottom;
+    bottom: 0;
 }
 

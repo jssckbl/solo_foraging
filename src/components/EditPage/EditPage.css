@@ -1,6 +1,6 @@
 input {
-    width: 100%;
-  padding: 12px 20px;
+    width: 360px;
+  padding: 4px 4px;
   margin: 8px 0;
   box-sizing: border-box;
     border-radius: 4px;
@@ -10,8 +10,11 @@ input {
     font-size: 20px;
 }
 
+
+
 #grad {
   background-image: repeating-linear-gradient(#d1dea4, #d1d8b6 10%, #d1dea4 20%);
+
 }
 
 #textarea {
@@ -36,6 +39,7 @@ font-size: 20px;
     opacity: 1;
       transition: 0.3s;
     border-radius: 4px;
+
 
 
   margin: 4px 2px;

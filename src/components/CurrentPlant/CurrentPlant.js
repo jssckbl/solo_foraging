@@ -87,12 +87,13 @@ class CurrentPlant extends Component {
                         <button className="current_plant_info" onClick={() => this.props.history.push(`/edit/${pizza.id}`)}>
                         <ul> 
                             <li>{pizza.common_name}</li> 
-                            <li>{pizza.scientific_name}</li> 
-                            <li>{pizza.date}</li>
-                            <li>{pizza.location}</li>
-                            <li>{pizza.stem}</li>
-                            <li>{pizza.leaves}</li>
-                            <li>{pizza.image}</li>
+                            <li>also known as {pizza.scientific_name}</li> 
+                            <li>was found on {pizza.date}</li>
+                            <li>near {pizza.location}</li>
+                            <br></br>
+                            <li>The stems were {pizza.stem}</li>
+                            <li>and the leaves were {pizza.leaves}</li>
+                            {/* <li>{pizza.image}</li> */}
                         </ul>
                         </button>
                     {/* </div> */}

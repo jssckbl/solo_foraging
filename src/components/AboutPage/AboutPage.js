@@ -8,11 +8,22 @@ import React from 'react';
 const AboutPage = () => (
   <div>
     <div>
-      <p>Morel Of The Story</p>
-      <p>List of Links</p>
       <p>
         Plants are cool. Edible plants that are not toxic are super cool. Find some cool edible plants!
       </p>
+
+      <p> Taking on a new skill, like learning about wild foods and herbs, can be overwhelming at first.
+        So how does someone learn enough? There are many paths, from apprenticeships to degrees
+        and certifications.
+        Most importantly, integrating these plants and herbs into your daily life is essential.
+        
+      </p>
+
+      <p> https://www.minnesotawildflowers.info/ </p>
+      <p> https://foragerchef.com/ </p>
+      <p> https://www.foragersharvest.com/#/ </p>
+      <p> https://www.wildfoodadventures.com </p>
+      <p> http://www.urbanoutdoorskills.com/ </p>
       <p>
         Here are some links to things that help you out when it comes to cool edible plants:
       </p>

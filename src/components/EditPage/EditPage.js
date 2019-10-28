@@ -141,10 +141,14 @@ setEventToEdit = () => {
                         defaultValue={this.state.editPlant.stem}
                         onChange={(event) => this.handleChange('stem', event)}></input><br />
 
-                    * Upload Image <input id="textbox" type="text" placeholder="Image"
+                    Leaves: <input id="textbox" type="text" placeholder="Leaves"
+                        defaultValue={this.state.editPlant.leaves}
+                        onChange={(event) => this.handleChange('leaves', event)}></input><br />
+
+                    {/* * Upload Image <input id="textbox" type="text" placeholder="Image"
                         defaultValue={this.state.editPlant.image}
                         onChange={(event) => this.handleChange('image1', event)}
-                    ></input><br />
+                    ></input><br /> */}
                     <br />
 
                     {/* <Button variant="contained" color="primary" type="submit" >
