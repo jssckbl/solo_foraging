@@ -28,11 +28,14 @@ cdn
 }
 
 .nav {
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #cb9d6f;
   max-width: 100%;
   padding-top: 0px;
   padding-bottom: 0px;
+    display: flex;
+  /* flex-direction: row; */
+  /* order: "integer"; */
 }
 
 .morelsLogo {
@@ -52,13 +55,21 @@ cdn
   background-color: #1f321a;
   text-align: center;
   padding: 14px 16px;
-  /* margin: 10px; */
+  margin-top: 10px;
   margin-right: 7px;
   text-decoration: none;
   font-size: 16px;
   text-align: center;
   border-radius: 4px;
-  display: inline-block;
+  
+  /* display: flex; */
+  height: 60px;
+/* flex-direction: row; */
+
+  /* 
+  order: "integer";
+  align-items: flex-start; */
+
   width: 80px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
@@ -74,7 +85,11 @@ cdn
   background-color: #254e0b;
 }
 
-.nav-right {
+.link-button {
+  display: flex;
+}
+
+/* .nav-right {
   display: block;
   color: white;
   text-align: center;
@@ -82,7 +97,7 @@ cdn
   text-decoration: none;
     float: left;
   font-size: 17px;
-}
+} */
 
 #main {
   transition: margin-left .5s;

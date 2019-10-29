@@ -5,14 +5,13 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 
 
-// className is class in mark's stuff
 const Nav = (props) => (
   <div className="nav">
     <img src="Morels.png" className="morelsLogo" alt="morelsLogo" />
     <Link to="/home">
       <h2 className="nav-title"></h2>
     </Link>
-    <div className="nav-right" id="main">
+    {/* <div className="nav-right" id="main"> */}
       <Link className="nav-link" to="/home">
         {/* Show this link if they are logged in or not,
         but call this link 'Home' if they are logged in,
@@ -37,7 +36,7 @@ const Nav = (props) => (
       )}
 
     </div>
-  </div>
+  // </div>
 );
 
 // Instead of taking everything from state, we just want the user
