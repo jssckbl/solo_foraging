@@ -6,8 +6,10 @@ import './Nav.css';
 
 
 const Nav = (props) => (
+<>
+  <img src="Morels.png" className="morelsLogo" alt="morelsLogo" />
+
   <div className="nav">
-    <img src="Morels.png" className="morelsLogo" alt="morelsLogo" />
     <Link to="/home">
       <h2 className="nav-title"></h2>
     </Link>
@@ -36,6 +38,7 @@ const Nav = (props) => (
       )}
 
     </div>
+    </>
   // </div>
 );
 
