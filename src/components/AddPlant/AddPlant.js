@@ -153,7 +153,7 @@ class AddPlant extends Component {
                         onChange={(event) => this.handleChange('scientific_name', event)}></input>
                     <br />
                     
-< br /> 
+                    < br /> 
                         * Date Found: < input id = "textbox"
                         type = "text"
                         placeholder = "ex. 10-19-2019"

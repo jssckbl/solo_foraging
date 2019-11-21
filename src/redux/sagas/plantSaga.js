@@ -6,6 +6,7 @@ function* getPlantSaga(action) {
     try {
         const response = yield axios.get(`/plants`);
         yield put({ type: 'SET_PLANTS', payload: response.data })
+        console.log( ' get plant saga', getPlantSaga );
     } catch (error) {
         console.log('Error getting plant information', error);
         alert('Could not get plant information in plantSaga.')

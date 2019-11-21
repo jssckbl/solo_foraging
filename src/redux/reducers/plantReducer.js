@@ -6,5 +6,6 @@ const plantReducer = (state = [], action) => {
             return state;
     }
 }
+console.log('plant reducer', plantReducer);
 
 export default plantReducer;

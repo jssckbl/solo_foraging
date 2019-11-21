@@ -32,7 +32,7 @@ componentDidUpdate (preProps) {
 setEventToEdit = () => {
     // this.props.storeInstance.currentPlantReducer
     let plant = this.props.storeInstance.currentPlantReducer;
-    console.log('SETEVENTTOEDITHIHIHIHIH', this.props.storeInstance.currentPlantReducer
+    console.log('set event to edit', this.props.storeInstance.currentPlantReducer
 );
         this.setState({
                 editPlant: {
