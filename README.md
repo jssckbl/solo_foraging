@@ -4,9 +4,7 @@ Welcome to Morel of the Story - a mobile first web application that allows users
 
 This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
 
-Upcoming versions will offer the individual user the option to upload multiple photos of the same plant, as well as allow users to interact, and offer input about each other’s finds. Maintaining the social component among foraging culture is important, and is much of the inspiration behind this application.
-
-Morel of the Story will be deployed by the end of December 2019.
+Morel of the Story (V.1) will be deployed by the end of December 2019.
 
 In the meantime, if you would like to check out this project, the following instructions will guide you in setting it up.
 
@@ -92,6 +90,10 @@ Before pushing to Heroku, run `npm run build` in terminal. This will create a bu
 5. Create the necessary tables
 6. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security
 7. In the deploy section, select manual deploy
+
+## Next Steps
+
+Upcoming versions will offer the individual user the option to upload multiple photos of the same plant, as well as allow users to interact, and offer input about each other’s finds. Maintaining the social component among foraging culture is important, and is much of the inspiration behind this application.
 
 
 ## Author(s)
