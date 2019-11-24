@@ -1,13 +1,17 @@
 # Morel of the Story
+
+Welcome to Morel of the Story - a mobile first web application that allows users to create a personal journal of plants they find while foraging. Users are reminded to include detailed information about the plant they have photographed, which is then added to their collection. 
+
 This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
+
+Upcoming versions will offer the individual user the option to upload multiple photos of the same plant, as well as allow users to interact, and offer input about each other’s finds. Maintaining the social component among foraging culture is important, and is much of the inspiration behind this application.
+
+Morel of the Story will be deployed by the end of December 2019.
+
+In the meantime, if you would like to check out this project, the following instructions will guide you in setting it up.
 
 It is **STRONGLY** recommended to follow these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
 
-## Download (Don't Clone) This Repository
-
-* Don't Fork or Clone. Instead, click the `Clone or Download` button and select `Download Zip`.
-* Unzip the project and start with the code in that folder.
-* Create a new GitHub project and push this code to the new repository.
 
 ## Prerequisites
 
@@ -62,32 +66,6 @@ CREATE TABLE "images" (
 * Run `npm run client`
 * Navigate to `localhost:3000`
 
-## Debugging
-
-To debug, you will need to run the client-side separately from the server. Start the client by running the command `npm run client`. Start the debugging server by selecting the Debug button.
-
-![VSCode Toolbar](documentation/images/vscode-toolbar.png)
-
-Then make sure `Launch Program` is selected from the dropdown, then click the green play arrow.
-
-![VSCode Debug Bar](documentation/images/vscode-debug-bar.png)
-
-
-## Testing Routes with Postman
-
-To use Postman with this repo, you will need to set up requests in Postman to register a user and login a user at a minimum. 
-
-Keep in mind that once you using the login route, Postman will manage your session cookie for you just like a browser, ensuring it is sent with each subsequent request. If you delete the `localhost` cookie in Postman, it will effectively log you out.
-
-1. Start the server - `npm run server`
-2. [Import the sample routes JSON file](./PostmanPrimeSoloRoutes.json) by clicking `Import` in Postman. Select the file.
-3. Click `Collections` and `Send` the following three calls in order:
-    1. `POST /api/user/register` registers a new user, see body to change username/password
-    2. `POST /api/user/login` will login a user, see body to change username/password
-    3. `GET /api/user` will get user information, by default it's not very much
-
-After running the login route above, you can try any other route you've created that requires a logged in user!
-
 
 ## Production Build
 
@@ -108,9 +86,21 @@ Before pushing to Heroku, run `npm run build` in terminal. This will create a bu
 ## Deployment
 
 1. Create a new Heroku project
-1. Link the Heroku project to the project GitHub Repo
-1. Create an Heroku Postgres database
-1. Connect to the Heroku Postgres database from Postico
-1. Create the necessary tables
-1. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security
-1. In the deploy section, select manual deploy
+2. Link the Heroku project to the project GitHub Repo
+3. Create an Heroku Postgres database
+4. Connect to the Heroku Postgres database from Postico
+5. Create the necessary tables
+6. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security
+7. In the deploy section, select manual deploy
+
+
+## Author(s)
+
+Jessica Woudsma
+
+
+## Acknowledgements
+
+Cassidy Foust - Morel of the Story logo
+Prime Digital Academy
+Porta Cohort
