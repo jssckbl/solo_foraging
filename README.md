@@ -93,7 +93,10 @@ Before pushing to Heroku, run `npm run build` in terminal. This will create a bu
 
 ## Next Steps
 
-Upcoming versions will offer the individual user the option to upload multiple photos of the same plant, as well as allow users to interact, and offer input about each other’s finds. Maintaining the social component among foraging culture is important, and is much of the inspiration behind this application.
+- [ ] Upload multiple photos of same plant
+- [ ] Allow user to create a group of other users
+- [ ] Allow user to hide plant location information from other users
+- [ ] Incorporate Google Maps for users to pinpoint exact plant location
 
 
 ## Author(s)
@@ -103,27 +106,8 @@ Jessica Woudsma
 
 ## Acknowledgements
 
-Cassidy Foust - Morel of the Story logo
-Prime Digital Academy
-Porta Cohort
+- Cassidy Foust, creator of Morel of the Story logo
 
+- Prime Digital Academy
 
-unchecked # [checkbox:unchecked] sample text
-
-# [checkbox:unchecked] sample text
-
-[ ] unchecked # [checkbox:unchecked] sample text
-
-* [ ] unchecked # [checkbox:unchecked] sample text
-
-* [ ] #
-
-- [ ] added text
-- [x] added text
-
-* [ ] added text
-* [x] added text
-
-
-[ ] sample text
-[x] sample text
+- Porta Cohort
