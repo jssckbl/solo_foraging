@@ -106,3 +106,8 @@ Jessica Woudsma
 Cassidy Foust - Morel of the Story logo
 Prime Digital Academy
 Porta Cohort
+
+
+unchecked # [checkbox:unchecked] sample text
+
+# [checkbox:unchecked] sample text
