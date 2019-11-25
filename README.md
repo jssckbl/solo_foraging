@@ -116,5 +116,9 @@ unchecked # [checkbox:unchecked] sample text
 
 * [ ] unchecked # [checkbox:unchecked] sample text
 
+* [ ] 
+* [x]
+
+
 [ ] sample text
 [x] sample text
