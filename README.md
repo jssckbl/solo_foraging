@@ -111,3 +111,10 @@ Porta Cohort
 unchecked # [checkbox:unchecked] sample text
 
 # [checkbox:unchecked] sample text
+
+[ ] unchecked # [checkbox:unchecked] sample text
+
+* [ ] unchecked # [checkbox:unchecked] sample text
+
+[ ] sample text
+[x] sample text
