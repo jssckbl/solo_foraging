@@ -118,11 +118,11 @@ unchecked # [checkbox:unchecked] sample text
 
 * [ ] #
 
-- [ ]
-- [x]
+- [ ] added text
+- [x] added text
 
-* [ ] 
-* [x]
+* [ ] added text
+* [x] added text
 
 
 [ ] sample text
