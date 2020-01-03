@@ -4,7 +4,7 @@ Welcome to Morel of the Story - a mobile first web application that allows users
 
 This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
 
-Morel of the Story (V.1) will be deployed by the end of December 2019.
+Morel of the Story (V.1) is planned to be deployed January 2020.
 
 In the meantime, if you would like to check out this project, the following instructions will guide you in setting it up.
 
