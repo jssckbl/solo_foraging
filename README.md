@@ -106,7 +106,7 @@ Jessica Woudsma
 
 ## Acknowledgements
 
-- Cassidy Foust, creator of Morel of the Story logo
+- Cassidy Foust, logo designer
 
 - Prime Digital Academy
 
