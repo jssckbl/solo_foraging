@@ -31,22 +31,21 @@ cdn
   /* overflow: hidden; */
   background-color: #cb9d6f;
   max-width: 100%;
-  padding-top: 0px;
-  padding-bottom: 0px;
-    display: flex;
-  /* flex-direction: row; */
-  /* order: "integer"; */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .morelsLogo {
-  height: 230px;
-  padding-top: 3px;
+  height: 210px;
+  padding-top: 0px;
   margin-left: auto;
   margin-right: auto;
   display: block;
   border: 4px groove #956441;
-  border-radius: 4px;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .nav-link {
