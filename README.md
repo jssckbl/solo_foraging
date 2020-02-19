@@ -4,9 +4,13 @@ Welcome to Morel of the Story - a mobile first web application that allows users
 
 This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
 
-Morel of the Story (V.1) is planned to be deployed January 2020.
+Morel of the Story (V.1) has been deployed as of February 19, 2020! 
 
-In the meantime, if you would like to check out this project, the following instructions will guide you in setting it up.
+Check it out at [Morel of the Story - Heroku Edition](https://boiling-ridge-34034.herokuapp.com/#/home) **BUT PLEASE NOTE THE FOLLOWING**
+
+- The current hosting platform does include a 10-30 second lag time upon each page load. Please be patient, especially if you are uploading any photos. If you experience any lag you believe to be excessive or as a sign of something working improperly, please contact me at jessicawoudsma@gmail.com
+
+If you would like to access this project on your local machine, the following instructions will get you there. 
 
 It is **STRONGLY** recommended to follow these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
 
