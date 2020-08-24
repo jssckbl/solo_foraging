@@ -1,21 +1,22 @@
-input {
-  width: 100%;
-  padding: 4px 4px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border-radius: 4px;
-  background-color: #d4b9a0;
-  color: white;
-  border: 2px solid #555;
-  font-size: 20px;
-}
+/*input {
+  /* width: 100%; */
+/* padding: 4px 4px; */
+/* margin: 8px 0; */
+/* box-sizing: border-box; */
+/* border-radius: 4px; */
+/* background-color: #d4b9a0; */
+/* color: white; */
+/* border: 2px solid #555; */
+/* font-size: 20px; */
 
 /* width: 360px; when mobile */
 
-
 #grad {
-  background-image: repeating-linear-gradient(#d1dea4, #d1d8b6 10%, #d1dea4 20%);
-
+  background-image: repeating-linear-gradient(
+    #d1dea4,
+    #d1d8b6 10%,
+    #d1dea4 20%
+  );
 }
 
 #textarea {
@@ -29,12 +30,13 @@ input {
   resize: none;
 }
 
-button {
+/* button {
   background-color: #184209;
   border: 2px solid #86997f;
   color: white;
   padding: 10px 18px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 18px;
   text-decoration: none;
   opacity: 1;
@@ -43,9 +45,9 @@ button {
   margin: 4px 2px;
   cursor: pointer;
   -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-}
+/* transition-duration: 0.4s;
+}  */
 
 button:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
