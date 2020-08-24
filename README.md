@@ -13,8 +13,8 @@ Check it out at [Morel of the Story - Heroku Edition](https://boiling-ridge-3403
 - The current hosting platform does include a 10-30 second lag time upon each page load. Please be patient, especially if you are uploading any photos. If you experience any lag you believe to be excessive or as a sign of something working improperly, please contact me at jessicawoudsma@gmail.com
 
 - If you would like to access an active account, you can use:
-login: jess
-password: 1234
+  - login: jess
+  - password: 1234
 
 If you would like to access this project on your local machine, the following instructions will get you there. 
 
