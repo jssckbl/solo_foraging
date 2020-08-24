@@ -6,9 +6,15 @@ This version uses React, Redux, Express, Passport, and PostgreSQL (a full list o
 
 Morel of the Story (V.1) has been deployed as of February 19, 2020! 
 
-Check it out at [Morel of the Story - Heroku Edition](https://boiling-ridge-34034.herokuapp.com/#/home) **BUT PLEASE NOTE THE FOLLOWING**
+Check it out at [Morel of the Story - Heroku Edition](https://boiling-ridge-34034.herokuapp.com/#/home) 
+
+**PLEASE NOTE THE FOLLOWING**
 
 - The current hosting platform does include a 10-30 second lag time upon each page load. Please be patient, especially if you are uploading any photos. If you experience any lag you believe to be excessive or as a sign of something working improperly, please contact me at jessicawoudsma@gmail.com
+
+- If you would like to access an active account, you can use:
+- login: jess
+- password: 1234
 
 If you would like to access this project on your local machine, the following instructions will get you there. 
 
