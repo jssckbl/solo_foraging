@@ -34,7 +34,6 @@ class EditPlant extends Component {
   }
 
   setEventToEdit = () => {
-    // this.props.storeInstance.currentPlantReducer
     let plant = this.props.storeInstance.currentPlantReducer;
     console.log(
       'set event to edit',
@@ -52,7 +51,6 @@ class EditPlant extends Component {
         image: plant.image
       }
     });
-    // })
   };
 
   handleChange = (propertyName, event) => {
@@ -66,7 +64,7 @@ class EditPlant extends Component {
     });
   };
 
-  cancelButton = event => {
+  cancelButton = (event) => {
     this.props.history.push('/home');
   };
 
@@ -78,13 +76,7 @@ class EditPlant extends Component {
     this.props.history.push('/home');
   };
 
-  // updatePlant = () => {
-  //     console.log('updatePlant on EditPage.js');
-  //     this.props.dispatch({ type: 'EDIT_PLANT', payload: {...this.state.editPlant, id: this.props.match.params.id } })
-  // }
-
-  // below is new code as of Wednesday evening
-  updatePlant = event => {
+  updatePlant = (event) => {
     event.preventDefault();
 
     // if statement to prevent onClick from happening without required
@@ -102,26 +94,11 @@ class EditPlant extends Component {
       type: 'EDIT_PLANT',
       payload: { ...this.state.editPlant, id: this.props.match.params.id }
     });
-    // this.props.dispatch({ type: 'GET_CURRENT_PLANT', payload: this.props.match.params.id })
 
-    // this.setState({
-    //     editCurrentPlant: {
-    //         common_name: '',
-    //         scientific_name: '',
-    //         date: '',
-    //         location: '',
-    //         stem: '',
-    //         leaves: '',
-    //         image: ''
-    //     }
-
-    // });
     this.props.history.push(`/plant/${this.props.match.params.id}`);
-    // this.props.dispatch({ type: 'FETCH_PLANTS' });
   };
 
   render() {
-    // console.log(this.state.editPlant.images)
     return (
       <div class='form' id='grad'>
         <h2>Edit Plant</h2>
@@ -132,7 +109,7 @@ class EditPlant extends Component {
             type='text'
             placeholder='Common Name'
             defaultValue={this.state.editPlant.common_name}
-            onChange={event => this.handleChange('common_name', event)}
+            onChange={(event) => this.handleChange('common_name', event)}
           ></input>
           <br />
           Scientific Name:{' '}
@@ -141,7 +118,7 @@ class EditPlant extends Component {
             type='text'
             placeholder='Scientific Name'
             defaultValue={this.state.editPlant.scientific_name}
-            onChange={event => this.handleChange('scientific_name', event)}
+            onChange={(event) => this.handleChange('scientific_name', event)}
           ></input>
           <br />
           Date Found:{' '}
@@ -150,7 +127,7 @@ class EditPlant extends Component {
             type='text'
             placeholder='Date Found'
             defaultValue={this.state.editPlant.date}
-            onChange={event => this.handleChange('date', event)}
+            onChange={(event) => this.handleChange('date', event)}
           ></input>
           <br />
           Location:{' '}
@@ -159,7 +136,7 @@ class EditPlant extends Component {
             type='text'
             placeholder='Location'
             defaultValue={this.state.editPlant.location}
-            onChange={event => this.handleChange('location', event)}
+            onChange={(event) => this.handleChange('location', event)}
           ></input>
           <br />
           Stem:{' '}
@@ -168,7 +145,7 @@ class EditPlant extends Component {
             type='text'
             placeholder='Stem'
             defaultValue={this.state.editPlant.stem}
-            onChange={event => this.handleChange('stem', event)}
+            onChange={(event) => this.handleChange('stem', event)}
           ></input>
           <br />
           Leaves:{' '}
@@ -177,7 +154,7 @@ class EditPlant extends Component {
             type='text'
             placeholder='Leaves'
             defaultValue={this.state.editPlant.leaves}
-            onChange={event => this.handleChange('leaves', event)}
+            onChange={(event) => this.handleChange('leaves', event)}
           ></input>
           <br />
           {/* * Upload Image <input id="textbox" type="text" placeholder="Image"
@@ -204,7 +181,7 @@ class EditPlant extends Component {
     );
   }
 }
-const mapStateToProps = storeInstance => ({
+const mapStateToProps = (storeInstance) => ({
   storeInstance
 });
 export default connect(mapStateToProps)(EditPlant);

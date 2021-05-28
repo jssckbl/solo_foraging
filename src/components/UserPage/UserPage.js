@@ -9,7 +9,7 @@ import Card from '@material-ui/core/Card';
 import './UserPage.css';
 import Grid from '@material-ui/core/Grid';
 
-const styles = muiBaseTheme => ({
+const styles = (muiBaseTheme) => ({
   card: {
     width: 300,
     margin: muiBaseTheme.spacing.unit,
@@ -46,7 +46,7 @@ class UserPage extends Component {
     this.props.dispatch({ type: 'GET_PLANTS' });
   }
 
-  handleClick = item => {
+  handleClick = (item) => {
     this.props.history.push(`/plant/${item.id}`);
   };
 
@@ -66,7 +66,7 @@ class UserPage extends Component {
           {/* <Grid item xs = {3}>
       </Grid>  */}
 
-          {plants.map(item => (
+          {plants.map((item) => (
             <Card
               key={item.id}
               className={classes.card}
@@ -76,21 +76,9 @@ class UserPage extends Component {
               <CardMedia className={classes.media} image={item.added_image} />
 
               <CardContent className={classes.content}>
-                <Typography
-                // className = {"MuiTypography--heading"}
-                // variant={'h6'}
-                // typeface={'Comic Sans'}
-                // gutterBottom
-                >
-                  Plant: {item.common_name}
-                </Typography>
+                <Typography>Plant: {item.common_name}</Typography>
 
-                <Typography
-                  // className={'MuiTypography--subheading'}
-                  variant={'caption'}
-                >
-                  Date: {item.date}
-                </Typography>
+                <Typography variant={'caption'}>Date: {item.date}</Typography>
                 <br />
               </CardContent>
             </Card>
@@ -101,7 +89,7 @@ class UserPage extends Component {
   }
 }
 
-const mapStateToProps = storeInstance => ({
+const mapStateToProps = (storeInstance) => ({
   storeInstance
 });
 // this allows us to use <App /> in index.js

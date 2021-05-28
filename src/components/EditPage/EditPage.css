@@ -1,16 +1,3 @@
-/*input {
-  /* width: 100%; */
-/* padding: 4px 4px; */
-/* margin: 8px 0; */
-/* box-sizing: border-box; */
-/* border-radius: 4px; */
-/* background-color: #d4b9a0; */
-/* color: white; */
-/* border: 2px solid #555; */
-/* font-size: 20px; */
-
-/* width: 360px; when mobile */
-
 #grad {
   background-image: repeating-linear-gradient(
     #d1dea4,
@@ -28,6 +15,10 @@
   border-radius: 4px;
   background-color: #f8f8f8;
   resize: none;
+}
+
+button:hover {
+  opacity: 0.8;
 }
 
 /* button {
@@ -48,6 +39,15 @@
 /* transition-duration: 0.4s;
 }  */
 
-button:hover {
-  opacity: 0.8;
-}
+/*input {
+  /* width: 100%; */
+/* padding: 4px 4px; */
+/* margin: 8px 0; */
+/* box-sizing: border-box; */
+/* border-radius: 4px; */
+/* background-color: #d4b9a0; */
+/* color: white; */
+/* border: 2px solid #555; */
+/* font-size: 20px; */
+
+/* width: 360px; when mobile */
